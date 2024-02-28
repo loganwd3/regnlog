@@ -21,16 +21,13 @@ export const Registration = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch(
-      "mongodb+srv://logandb2:<password>@cluster0.2wc2eqb.mongodb.net:8000/register",
-      {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch("https://regnlogapi.onrender.com/register", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((data) => {
         console.log(data);
         if (data.status === 201) {
